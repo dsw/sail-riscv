@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# configure this repo
+
+# **** extract the configurations from the env vars
+
+# sail
+if test "x${SAIL_ROOT}" == "x"; then
+    echo "must set env var SAIL_ROOT"
+    exit 1
+fi
+
+
+# **** configure this script
+
+set -o nounset                  # exit on use of an unset var
+set -o errexit                  # exit on an error
+set -o pipefail                 # even in a pipe
+set -x                          # echo each line
+
+# **** make externs
+
+rm -rf externs
+mkdir -p externs
+
+# sail
+rm -f ./externs/sail-root
+ln -s ${SAIL_ROOT} externs/sail-root

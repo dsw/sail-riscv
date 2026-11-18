@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# run a default configuation of this repo
+
+if test "x${DEWDROP_ROOT}" == "x"; then
+    echo "must set env var DEWDROP_ROOT"
+    exit 1
+fi
+
+# **** configure this script
+
+set -o nounset                  # exit on use of an unset var
+set -o errexit                  # exit on an error
+set -o pipefail                 # even in a pipe
+set -x                          # echo each line
+
+# ****
+
+SAIL_ROOT=${DEWDROP_ROOT}/sail \
+  ./configure
