@@ -17,3 +17,13 @@ z3_problems
 sail_smt_cache
 # Rocq packaging
 rocq-sail-riscv.opam
+
+# external dependencies
+externs
+
+# hide directories
+Hide*
+Diff*
+
+# hide nohup
+nohup*.out
